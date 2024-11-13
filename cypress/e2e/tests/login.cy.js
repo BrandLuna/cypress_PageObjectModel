@@ -13,10 +13,11 @@ describe('Prueba de Login usando POM', () => {
 
         // Usa datos del fixture para hacer login
         const usuario = this.usuariosData.usuario1;
-
-        LoginPage.enterUsername(usuario.username);
-        LoginPage.enterPassword(usuario.password);
-        LoginPage.clickLogin();
+        LoginPage.login(usuario.username, usuario.password)
+        
+        //LoginPage.enterUsername(usuario.username);
+        //LoginPage.enterPassword(usuario.password);
+        //LoginPage.clickLogin();
 
         // Verificación de la URL después del login
         cy.url().should('eq', 'https://www.saucedemo.com/v1/inventory.html');
